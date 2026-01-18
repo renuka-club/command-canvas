@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import { motion, AnimatePresence } from "framer-motion";
 import { 
   LayoutDashboard, 
@@ -40,6 +41,12 @@ interface AdminSidebarProps {
 
 export function AdminSidebar({ activeRoute = "/", onNavigate }: AdminSidebarProps) {
   const [isCollapsed, setIsCollapsed] = useState(false);
+  const navigate = useNavigate();
+
+  const handleNavigate = (href: string) => {
+    navigate(href);
+    onNavigate?.(href);
+  };
 
   return (
     <motion.aside
@@ -77,7 +84,7 @@ export function AdminSidebar({ activeRoute = "/", onNavigate }: AdminSidebarProp
           return (
             <button
               key={item.href}
-              onClick={() => onNavigate?.(item.href)}
+              onClick={() => handleNavigate(item.href)}
               className={cn(
                 "nav-link w-full relative group",
                 isActive && "active"

@@ -1,14 +1,14 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { motion, AnimatePresence } from "framer-motion";
-import { 
-  LayoutDashboard, 
-  ShoppingCart, 
-  Users, 
-  Palette, 
-  Package, 
-  Image, 
-  CreditCard, 
+import {
+  LayoutDashboard,
+  ShoppingCart,
+  Users,
+  Palette,
+  Package,
+  Image,
+  CreditCard,
   Settings,
   ChevronLeft,
   ChevronRight,
@@ -57,8 +57,8 @@ export function AdminSidebar({ activeRoute = "/", onNavigate }: AdminSidebarProp
     >
       {/* Logo */}
       <div className="p-6 flex items-center gap-3 border-b border-sidebar-border">
-        <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-primary to-accent flex items-center justify-center">
-          <Shirt className="w-5 h-5 text-primary-foreground" />
+        <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-primary to-accent flex items-center justify-center p-1">
+          <img src="/logo.png" alt="Command Canvas" className="w-full h-full object-contain" />
         </div>
         <AnimatePresence>
           {!isCollapsed && (
@@ -68,7 +68,7 @@ export function AdminSidebar({ activeRoute = "/", onNavigate }: AdminSidebarProp
               exit={{ opacity: 0, x: -10 }}
               transition={{ duration: 0.2 }}
             >
-              <h1 className="font-display font-bold text-lg text-foreground">ThreadForge</h1>
+              <h1 className="font-display font-bold text-lg text-foreground">Command Canvas</h1>
               <p className="text-xs text-muted-foreground">Admin Panel</p>
             </motion.div>
           )}

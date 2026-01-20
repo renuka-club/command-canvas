@@ -4,74 +4,101 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Admin Dashboard Design System - Premium Fashion-Forward */
-
 @layer base {
   :root {
-    /* Deep charcoal base */
-    --background: 240 10% 6%;
-    --foreground: 0 0% 95%;
+    /* Minimal Theme - Light Mode */
+    /* --bg-main: #F8F8F6 */
+    --background: 60 8% 97%;
+    /* --text-primary: #111111 */
+    --foreground: 0 0% 7%;
 
-    /* Card surfaces with glass effect */
-    --card: 240 8% 10%;
-    --card-foreground: 0 0% 95%;
+    /* --bg-surface: #FFFFFF */
+    --card: 0 0% 100%;
+    --card-foreground: 0 0% 7%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 0 0% 7%;
 
-    --popover: 240 8% 12%;
-    --popover-foreground: 0 0% 95%;
+    /* --accent: #FF6A00 */
+    --primary: 25 100% 50%;
+    --primary-foreground: 0 0% 100%;
 
-    /* Electric neon blue primary */
-    --primary: 200 100% 50%;
-    --primary-foreground: 240 10% 6%;
+    /* --accent-soft: #FFF1E6 */
+    --secondary: 26 100% 95%;
+    --secondary-foreground: 25 100% 50%;
 
-    /* Muted grays */
-    --secondary: 240 6% 16%;
-    --secondary-foreground: 0 0% 85%;
+    /* --border-color: #E5E7EB */
+    --muted: 220 13% 91%;
+    /* --text-secondary: #6B7280 */
+    --muted-foreground: 220 9% 46%;
 
-    --muted: 240 6% 20%;
-    --muted-foreground: 0 0% 60%;
+    --accent: 26 100% 95%;
+    --accent-foreground: 25 100% 50%;
 
-    /* Neon accent - electric purple */
-    --accent: 280 100% 60%;
-    --accent-foreground: 0 0% 100%;
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 98%;
 
-    /* Destructive - crimson */
-    --destructive: 0 85% 55%;
-    --destructive-foreground: 0 0% 100%;
-
-    /* Success - acid green */
-    --success: 140 80% 50%;
-    --success-foreground: 240 10% 6%;
-
-    /* Warning - amber */
-    --warning: 40 95% 55%;
-    --warning-foreground: 240 10% 6%;
-
-    --border: 240 6% 20%;
-    --input: 240 6% 16%;
-    --ring: 200 100% 50%;
+    --border: 220 13% 91%;
+    --input: 220 13% 91%;
+    --ring: 25 100% 50%;
 
     --radius: 0.75rem;
+    /* 12px */
 
-    /* Sidebar */
-    --sidebar-background: 240 10% 8%;
-    --sidebar-foreground: 0 0% 85%;
-    --sidebar-primary: 200 100% 50%;
-    --sidebar-primary-foreground: 240 10% 6%;
-    --sidebar-accent: 280 100% 60%;
-    --sidebar-accent-foreground: 0 0% 100%;
-    --sidebar-border: 240 6% 18%;
-    --sidebar-ring: 200 100% 50%;
+    /* Sidebar - keeping it light/surface for this theme */
+    --sidebar-background: 0 0% 100%;
+    --sidebar-foreground: 220 9% 46%;
+    --sidebar-primary: 25 100% 50%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 26 100% 95%;
+    --sidebar-accent-foreground: 25 100% 50%;
+    --sidebar-border: 220 13% 91%;
+    --sidebar-ring: 25 100% 50%;
+  }
 
-    /* Custom gradients */
-    --gradient-primary: linear-gradient(135deg, hsl(200 100% 50%), hsl(280 100% 60%));
-    --gradient-success: linear-gradient(135deg, hsl(140 80% 50%), hsl(160 80% 40%));
-    --gradient-warning: linear-gradient(135deg, hsl(40 95% 55%), hsl(20 95% 50%));
-    --gradient-destructive: linear-gradient(135deg, hsl(0 85% 55%), hsl(340 85% 50%));
-    --gradient-glass: linear-gradient(135deg, hsla(0 0% 100% / 0.05), hsla(0 0% 100% / 0.02));
+  .dark {
+    /* Minimal Theme - Dark Mode */
+    /* --bg-main: #0B0B0C */
+    --background: 240 6% 5%;
+    /* --text-primary: #FAFAFA */
+    --foreground: 0 0% 98%;
 
-    /* Shadows */
-    --shadow-neon: 0 0 30px hsla(200 100% 50% / 0.3);
-    --shadow-card: 0 4px 24px hsla(0 0% 0% / 0.4);
+    /* --bg-surface: #121212 */
+    --card: 0 0% 7%;
+    --card-foreground: 0 0% 98%;
+    --popover: 0 0% 7%;
+    --popover-foreground: 0 0% 98%;
+
+    /* --accent: #FF6A00 */
+    --primary: 25 100% 50%;
+    --primary-foreground: 0 0% 100%;
+
+    /* --accent-soft: #2A1A10 */
+    --secondary: 23 45% 11%;
+    --secondary-foreground: 25 100% 50%;
+
+    /* --border-color: #27272A */
+    --muted: 240 4% 16%;
+    /* --text-secondary: #A1A1AA */
+    --muted-foreground: 240 5% 65%;
+
+    --accent: 23 45% 11%;
+    --accent-foreground: 25 100% 50%;
+
+    --destructive: 0 62% 30%;
+    --destructive-foreground: 0 0% 98%;
+
+    --border: 240 4% 16%;
+    --input: 240 4% 16%;
+    --ring: 25 100% 50%;
+
+    --sidebar-background: 0 0% 7%;
+    --sidebar-foreground: 240 5% 65%;
+    --sidebar-primary: 25 100% 50%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 23 45% 11%;
+    --sidebar-accent-foreground: 25 100% 50%;
+    --sidebar-border: 240 4% 16%;
+    --sidebar-ring: 25 100% 50%;
   }
 }
 
@@ -81,70 +108,51 @@
   }
 
   body {
-    @apply bg-background text-foreground font-sans antialiased;
-    font-family: 'Inter', sans-serif;
-  }
-
-  h1, h2, h3, h4, h5, h6 {
-    font-family: 'Space Grotesk', sans-serif;
+    @apply bg-background text-foreground;
   }
 }
 
 @layer components {
+  /* Minimal Theme Components */
+
   .glass-card {
-    @apply bg-card/80 backdrop-blur-xl border border-white/5 shadow-lg;
-    background-image: var(--gradient-glass);
+    /* Keeping for compatibility but updating visuals */
+    @apply bg-card border border-border shadow-sm;
   }
 
-  .neon-glow {
-    box-shadow: var(--shadow-neon);
+  /* User requested card style */
+  .card {
+    @apply bg-card rounded-2xl border border-border shadow-[0px_10px_30px_rgba(0, 0, 0, 0.04)];
   }
 
-  .gradient-text {
-    background: var(--gradient-primary);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
+  /* User requested button style - overriding default Shadcn button mostly via variables, 
+     but adding a specific utility class if they want to force it */
+  .btn-primary {
+    @apply bg-primary text-primary-foreground rounded-xl px-5 py-3 transition-colors duration-200;
   }
 
-  .stat-card {
-    @apply glass-card rounded-xl p-6 transition-all duration-300;
+  .btn-primary:hover {
+    /* We can't easily do hex manipulation in CSS variables without calc-color-mod which isn't standard,
+       so we rely on Shadcn's primary/90 or similar.
+       However, user asked for #E85D04 (Darker Orange). 
+       HSL: 24 96% 46% */
+    background-color: hsl(24 96% 46%);
   }
 
-  .stat-card:hover {
-    @apply border-primary/30;
-    box-shadow: var(--shadow-neon);
+  .text-muted {
+    @apply text-muted-foreground;
   }
 
+  /* Sidebar helpers */
   .nav-link {
-    @apply flex items-center gap-3 px-4 py-3 rounded-lg text-muted-foreground transition-all duration-200;
+    @apply flex items-center gap-3 px-4 py-3 rounded-lg text-sidebar-foreground transition-all duration-200;
   }
 
   .nav-link:hover {
-    @apply bg-secondary text-foreground;
+    @apply bg-sidebar-accent text-sidebar-accent-foreground;
   }
 
   .nav-link.active {
-    @apply bg-primary/10 text-primary border-l-2 border-primary;
-  }
-
-  .status-badge {
-    @apply px-3 py-1 rounded-full text-xs font-medium;
-  }
-
-  .status-pending {
-    @apply bg-warning/20 text-warning;
-  }
-
-  .status-printing {
-    @apply bg-primary/20 text-primary;
-  }
-
-  .status-shipped {
-    @apply bg-accent/20 text-accent;
-  }
-
-  .status-delivered {
-    @apply bg-success/20 text-success;
+    @apply bg-sidebar-primary/10 text-sidebar-primary border-l-2 border-sidebar-primary;
   }
 }

@@ -4,155 +4,137 @@
 @tailwind components;
 @tailwind utilities;
 
+/* =========================
+   BASE THEME VARIABLES
+========================= */
 @layer base {
-  :root {
-    /* Minimal Theme - Light Mode */
-    /* --bg-main: #F8F8F6 */
-    --background: 60 8% 97%;
-    /* --text-primary: #111111 */
-    --foreground: 0 0% 7%;
+    :root {
+        --background: 222 47% 11%;
+        --foreground: 210 40% 96%;
 
-    /* --bg-surface: #FFFFFF */
-    --card: 0 0% 100%;
-    --card-foreground: 0 0% 7%;
-    --popover: 0 0% 100%;
-    --popover-foreground: 0 0% 7%;
+        --card: 222 47% 17%;
+        --card-foreground: 210 40% 96%;
+        --popover: 222 47% 17%;
+        --popover-foreground: 210 40% 96%;
 
-    /* --accent: #FF6A00 */
-    --primary: 25 100% 50%;
-    --primary-foreground: 0 0% 100%;
+        --primary: 38 92% 50%;
+        --primary-foreground: 0 0% 0%;
 
-    /* --accent-soft: #FFF1E6 */
-    --secondary: 26 100% 95%;
-    --secondary-foreground: 25 100% 50%;
+        --secondary: 261 90% 66%;
+        --secondary-foreground: 0 0% 100%;
 
-    /* --border-color: #E5E7EB */
-    --muted: 220 13% 91%;
-    /* --text-secondary: #6B7280 */
-    --muted-foreground: 220 9% 46%;
+        --accent: 158 64% 52%;
+        --accent-foreground: 0 0% 100%;
 
-    --accent: 26 100% 95%;
-    --accent-foreground: 25 100% 50%;
+        --muted: 222 47% 25%;
+        --muted-foreground: 215 20% 75%;
 
-    --destructive: 0 84% 60%;
-    --destructive-foreground: 0 0% 98%;
+        --destructive: 0 84% 60%;
+        --destructive-foreground: 0 0% 98%;
 
-    --border: 220 13% 91%;
-    --input: 220 13% 91%;
-    --ring: 25 100% 50%;
+        --border: 222 47% 25%;
+        --input: 222 47% 25%;
+        --ring: 38 92% 50%;
 
-    --radius: 0.75rem;
-    /* 12px */
+        --radius: 1rem;
 
-    /* Sidebar - keeping it light/surface for this theme */
-    --sidebar-background: 0 0% 100%;
-    --sidebar-foreground: 220 9% 46%;
-    --sidebar-primary: 25 100% 50%;
-    --sidebar-primary-foreground: 0 0% 100%;
-    --sidebar-accent: 26 100% 95%;
-    --sidebar-accent-foreground: 25 100% 50%;
-    --sidebar-border: 220 13% 91%;
-    --sidebar-ring: 25 100% 50%;
-  }
-
-  .dark {
-    /* Minimal Theme - Dark Mode */
-    /* --bg-main: #0B0B0C */
-    --background: 240 6% 5%;
-    /* --text-primary: #FAFAFA */
-    --foreground: 0 0% 98%;
-
-    /* --bg-surface: #121212 */
-    --card: 0 0% 7%;
-    --card-foreground: 0 0% 98%;
-    --popover: 0 0% 7%;
-    --popover-foreground: 0 0% 98%;
-
-    /* --accent: #FF6A00 */
-    --primary: 25 100% 50%;
-    --primary-foreground: 0 0% 100%;
-
-    /* --accent-soft: #2A1A10 */
-    --secondary: 23 45% 11%;
-    --secondary-foreground: 25 100% 50%;
-
-    /* --border-color: #27272A */
-    --muted: 240 4% 16%;
-    /* --text-secondary: #A1A1AA */
-    --muted-foreground: 240 5% 65%;
-
-    --accent: 23 45% 11%;
-    --accent-foreground: 25 100% 50%;
-
-    --destructive: 0 62% 30%;
-    --destructive-foreground: 0 0% 98%;
-
-    --border: 240 4% 16%;
-    --input: 240 4% 16%;
-    --ring: 25 100% 50%;
-
-    --sidebar-background: 0 0% 7%;
-    --sidebar-foreground: 240 5% 65%;
-    --sidebar-primary: 25 100% 50%;
-    --sidebar-primary-foreground: 0 0% 100%;
-    --sidebar-accent: 23 45% 11%;
-    --sidebar-accent-foreground: 25 100% 50%;
-    --sidebar-border: 240 4% 16%;
-    --sidebar-ring: 25 100% 50%;
-  }
+        --sidebar-background: 222 47% 8%;
+        --sidebar-foreground: 210 40% 85%;
+        --sidebar-primary: 38 92% 50%;
+        --sidebar-primary-foreground: 0 0% 0%;
+        --sidebar-accent: 261 90% 20%;
+        --sidebar-accent-foreground: 38 92% 50%;
+        --sidebar-border: 222 47% 15%;
+        --sidebar-ring: 38 92% 50%;
+    }
 }
 
+/* =========================
+   GLOBAL BASE STYLES
+========================= */
 @layer base {
-  * {
-    @apply border-border;
-  }
+    * {
+        @apply border-border;
+    }
 
-  body {
-    @apply bg-background text-foreground;
-  }
+    body {
+        @apply bg-background text-foreground font-sans antialiased relative overflow-x-hidden;
+        font-family: 'Inter', sans-serif;
+        background-image:
+            radial-gradient(white, rgba(255, 255, 255, 0.2) 2px, transparent 3px),
+            radial-gradient(white, rgba(255, 255, 255, 0.15) 1px, transparent 2px),
+            radial-gradient(white, rgba(255, 255, 255, 0.1) 2px, transparent 3px);
+        background-size: 550px 550px, 350px 350px, 250px 250px;
+        background-position: 0 0, 40px 60px, 130px 270px;
+        animation: twinkle 60s linear infinite;
+    }
+
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+        font-family: 'Space Grotesk', sans-serif;
+    }
 }
 
+/* =========================
+   ANIMATION
+========================= */
+@keyframes twinkle {
+    from {
+        background-position: 0 0, 40px 60px, 130px 270px;
+    }
+
+    to {
+        background-position: 550px 550px, 390px 410px, 380px 520px;
+    }
+}
+
+/* =========================
+   COMPONENTS
+========================= */
 @layer components {
-  /* Minimal Theme Components */
 
-  .glass-card {
-    /* Keeping for compatibility but updating visuals */
-    @apply bg-card border border-border shadow-sm;
-  }
+    .card {
+        @apply bg-card/80 backdrop-blur border border-white/10 shadow-lg transition-all;
+    }
 
-  /* User requested card style */
-  .card {
-    @apply bg-card rounded-2xl border border-border shadow-[0px_10px_30px_rgba(0, 0, 0, 0.04)];
-  }
+    .card:hover {
+        @apply border-primary/40;
+        box-shadow: 0 0 20px rgba(245, 158, 11, 0.2);
+    }
 
-  /* User requested button style - overriding default Shadcn button mostly via variables, 
-     but adding a specific utility class if they want to force it */
-  .btn-primary {
-    @apply bg-primary text-primary-foreground rounded-xl px-5 py-3 transition-colors duration-200;
-  }
+    .btn-primary {
+        @apply bg-primary text-primary-foreground font-bold uppercase tracking-wider transition-all duration-300;
+        box-shadow: 0 0 15px rgba(245, 158, 11, 0.4);
+    }
 
-  .btn-primary:hover {
-    /* We can't easily do hex manipulation in CSS variables without calc-color-mod which isn't standard,
-       so we rely on Shadcn's primary/90 or similar.
-       However, user asked for #E85D04 (Darker Orange). 
-       HSL: 24 96% 46% */
-    background-color: hsl(24 96% 46%);
-  }
+    .btn-primary:hover {
+        @apply bg-primary/90 scale-105;
+        box-shadow: 0 0 25px rgba(245, 158, 11, 0.6);
+    }
 
-  .text-muted {
-    @apply text-muted-foreground;
-  }
+    .text-muted {
+        @apply text-muted-foreground;
+    }
 
-  /* Sidebar helpers */
-  .nav-link {
-    @apply flex items-center gap-3 px-4 py-3 rounded-lg text-sidebar-foreground transition-all duration-200;
-  }
+    .nav-link {
+        @apply flex items-center gap-3 px-4 py-3 rounded-xl text-sidebar-foreground transition-all duration-200 mt-1;
+    }
 
-  .nav-link:hover {
-    @apply bg-sidebar-accent text-sidebar-accent-foreground;
-  }
+    .nav-link:hover {
+        @apply bg-sidebar-accent text-primary;
+        box-shadow: 0 0 10px rgba(139, 92, 246, 0.3);
+    }
 
-  .nav-link.active {
-    @apply bg-sidebar-primary/10 text-sidebar-primary border-l-2 border-sidebar-primary;
-  }
+    .nav-link.active {
+        @apply bg-gradient-to-r from-primary/20 to-transparent text-primary border-l-4 border-primary;
+    }
+
+    .badge-cosmic {
+        @apply bg-secondary/20 text-secondary border border-secondary/30 rounded-full px-3 py-1 text-xs font-bold;
+        box-shadow: 0 0 8px rgba(139, 92, 246, 0.4);
+    }
 }
